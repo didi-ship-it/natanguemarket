@@ -61,7 +61,7 @@ class ProduitController
                 
            // appele de la methode add pour inserer dans la base de données
         try {
-            this->produitRepository->add
+            this->produitRepository->add($nom, $description, $categorie, $prix, $quantite, $photoName, $createdby);
         }cath(\throwable $th) {
             
             }
