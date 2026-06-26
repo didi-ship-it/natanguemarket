@@ -11,7 +11,7 @@ class ProduitController
     }
 
      // Permet de faire la gestion des erreurs
-    public function setErrorAndRedirect($message, $title, $redirectUrl = "login"): never{
+    public function setErrorAndRedirect($message, $title, $redirectUrl = "listeprod"): never{
     
         $_SESSION["error"] = $message;
         header("Location: $redirectUrl?error=1&message=" . urldecode($message) . "&title=" . urldecode($title));
@@ -37,7 +37,7 @@ class ProduitController
             $photo = $_FILES['photo'] ?? null;
 
             if (empty($nom) || empty($prix)) || empty($quantite) || !$photo {
-             
+            this-> setErrorAndRedirect($messageError,"Erreur de connexion", "login");
             }
 
             $nomPhoto = null;
