@@ -48,6 +48,13 @@ class ProduitController
 
 
             //Telechargement photo 
+            $uploadDir  = "../../public/image/produitRea";
+            $photoName = uniqid()."_" . basename($phovto['name']);
+            $uploadPath = $uploadDir . $photoName;
+
+             // deplacement de la photo
+                if(move_uploaded_file($photo['tmp_name'], $uploadPhath)) {
+            }
             }
          }
     }
