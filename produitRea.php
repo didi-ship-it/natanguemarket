@@ -31,6 +31,7 @@ class ProduitController
 
             $nom = trim($_POST['nom'] ?? "");
             $description = trim($_POST['description'] ?? "");
+            $categorie = trim($_POST['categorie'] ?? "");
             $prix = trim($_POST['prix'] ?? "0");
             $quantite = trim($_POST['quantite'] ?? "0");
             $createdby = $_SESSION['id'] ?? null;
@@ -43,6 +44,10 @@ class ProduitController
             $nomPhoto = null;
             if ($photo['error'] == UPLOAD_ERR_OK) {
                  this-> setErrorAndRedirect("Une erreur est survenue lors du telechargement de la photo ", $photo['error']);
+            //validation categorie
+
+
+            //Telechargement photo 
             }
          }
     }
