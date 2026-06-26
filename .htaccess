@@ -1,0 +1,62 @@
+RewriteEngine On
+
+#Global
+RewriteRule ^admin$ admin.php
+RewriteRule ^home$ index.php
+RewriteRule ^inscription$ inscription.php
+RewriteRule ^login$ login.php
+RewriteRule ^logout$ logout.php
+
+
+
+#--------------------------------- View ------------------------------------------------------
+
+#View Client
+#----------------------------
+RewriteRule ^listeclient$ view/pages/admin/client/liste.php
+RewriteRule ^corbeilleclient$ view/pages/admin/client/corbeille.php
+
+#View Commande
+#----------------------------
+RewriteRule ^listecommande$ view/pages/admin/commande/liste.php
+
+#View Livraison
+#----------------------------
+RewriteRule ^listelivraison$ view/pages/admin/livraison/liste.php
+
+#View Messagerie
+#----------------------------
+RewriteRule ^listemessagerie$ view/pages/admin/messagerie/liste.php
+RewriteRule ^corbeillemessagerie$ view/pages/admin/messagerie/corbeille.php
+
+
+#View Partenaires
+#----------------------------
+RewriteRule ^listepartenaire$ view/pages/admin/partenaire/liste.php
+RewriteRule ^corbeillepartenaire$ view/pages/admin/partenaire/corbeille.php
+
+#----------------------------
+RewriteRule ^listeproduit$ view/pages/admin/produit/liste.php
+RewriteRule ^corbeilleproduit$ view/pages/admin/produit/corbeille.php
+
+#View profile
+#----------------------------
+RewriteRule ^profile$ view/pages/admin/profil/profil.php
+
+#--------------------------------- controller ------------------------------------------------------
+
+RewriteRule ^userController$ controller/user/UserController.php
+RewriteRule ^roleController$ controller/role/RoleController.php
+RewriteRule ^produitController$ controller/produit/ProduitController.php
+RewriteRule ^PaiementController$ controller/paiement/PaiementController.php
+RewriteRule ^livraisonController$ controller/livraison/LivraisonController.php
+RewriteRule ^CommandeController$ controller/commande/CommandeController.php
+
+#--------------------------------- Model ------------------------------------------------------
+
+RewriteRule ^userRepo$ model/UserRepository.php
+RewriteRule ^roleRepop$  model/RoleRepository.php
+RewriteRule ^produitRepop$  model/ProduitRepository.php
+RewriteRule ^PaiementRepop$  model/PaiementRepository.php
+RewriteRule ^livraisonRepop$  model/LivraisonRepository.php
+RewriteRule ^CommandeRepop$  model/CommandeRepository.php
