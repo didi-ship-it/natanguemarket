@@ -37,20 +37,14 @@ class ProduitController
             $photo = $_FILES['photo'] ?? null;
 
             if (empty($nom) || empty($prix)) || empty($quantite) || !$photo {
-            this-> setErrorAndRedirect($messageError,"Erreur de connexion", "login");
+            this-> setErrorAndRedirect("Tous les chamnps sont obligatoire", "erreur d'ajout");
             }
-
+            // validation photo
             $nomPhoto = null;
-            if ($photo && $photo['error'] === UPLOAD_ERR_OK) {
-                // Exemple basique de déplacement de fichier
-                $dossierDestination = "../../public/uploads/produits/";
-                $nomPhoto = time() . "_" . basename($photo['name']);
-                move_uploaded_uploaded_file($photo['tmp_name'], $dossierDestination . $nomPhoto);
+            if ($photo['error'] == UPLOAD_ERR_OK) {
+                 this-> setErrorAndRedirect("Une erreur est survenue lors du telechargement de la photo ", $photo['error']);
             }
-
-            
-         
-        }
+         }
     }
 }
 ?>
