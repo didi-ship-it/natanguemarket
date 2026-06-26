@@ -44,6 +44,7 @@ class ProduitController
             $nomPhoto = null;
             if ($photo['error'] == UPLOAD_ERR_OK) {
                  this-> setErrorAndRedirect("Une erreur est survenue lors du telechargement de la photo ", $photo['error']);
+                 }
             //validation categorie
 
 
@@ -54,8 +55,18 @@ class ProduitController
 
              // deplacement de la photo
                 if(move_uploaded_file($photo['tmp_name'], $uploadPhath)) {
+                this-> setErrorAndRedirect("Echec du telechargement de l'image", $photo['error']);
+
             }
+                
+           // appele de la methode add pour inserer dans la base de données
+        try {
+            this->produitRepository->add
+        }cath(\throwable $th) {
+            
             }
+
+            
          }
     }
 }
