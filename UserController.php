@@ -80,7 +80,7 @@
                 //Validation des champs
                 $messageError = validateLoginFields($email, $password);
                 if($messageError){
-                    setErrorAndRedirect($messageError,"Erreur de connexion", "login");
+                   this-> setErrorAndRedirect($messageError,"Erreur de connexion", "login");
                 }
 
                 //Authentification classique de l'admin
