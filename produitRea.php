@@ -69,9 +69,12 @@ class ProduitController
            // appele de la methode add pour inserer dans la base de données
         try {
             $this->produitRepository->add($nom, $description, $categorie, $prix, $quantite, $photoName, $createdby);
-            if ($reponse)
-            $this->setErrorAndRedirect("Service/Réa");
-            exit;
+            if ($reponse) {
+                header("Location: listeprod?success=1");
+                exit;
+            } else {
+                $this->setErrorAndRedirect("L'insertion a échoué", "Erreur d'enregistrement");
+            }
 
         } catch(\Throwable $th) {
             $this->setErrorAndRedirect("Erreur lors de l'insertion en base de données : " . $th->getMessage(), "Erreur SQL");
